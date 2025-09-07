@@ -37,7 +37,7 @@ function App() {
 
     try {
       // Step 1: Generate the story
-      const response = await fetch('http://localhost:3000/api/stories/generate-text', {
+      const response = await fetch('https://story-generator-backend-ee1f.onrender.com/api/stories/generate-text', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -57,7 +57,7 @@ function App() {
         storyData.scenes.map(async (scene: StoryScene) => {
           try {
             console.log(`Generating image for ${scene.title}...`);
-            const imageResponse = await fetch('http://localhost:3000/api/stories/generate-image', {
+            const imageResponse = await fetch('https://story-generator-backend-ee1f.onrender.com/api/stories/generate-image', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'

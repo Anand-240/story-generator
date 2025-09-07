@@ -27,7 +27,7 @@
             try {
                 // Test 1: Basic API health check
                 statusDiv.innerHTML = 'Testing basic API health check...';
-                const healthResponse = await fetch('http://localhost:3000/api/stories/');
+                const healthResponse = await fetch('https://story-generator-backend-ee1f.onrender.com/api/stories/');
                 const healthData = await healthResponse.json();
                 
                 resultsDiv.innerHTML += `<h3>✅ Health Check</h3><pre>${JSON.stringify(healthData, null, 2)}</pre>`;
@@ -43,7 +43,7 @@
                     }
                 };
                 
-                const storyResponse = await fetch('http://localhost:3000/api/stories/generate-text', {
+                const storyResponse = await fetch('https://story-generator-backend-ee1f.onrender.com/api/stories/generate-text', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -71,7 +71,7 @@
                 
                 // Test 3: Image generation for first scene
                 statusDiv.innerHTML = 'Testing image generation...';
-                const imageResponse = await fetch('http://localhost:3000/api/stories/generate-image', {
+                const imageResponse = await fetch('https://story-generator-backend-ee1f.onrender.com/api/stories/generate-image', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

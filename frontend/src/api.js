@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/stories"; // backend URL
+const API_URL = "https://story-generator-backend-ee1f.onrender.com/api/stories"; // backend URL
 
 export async function generateStory(idea, settings) {
   const res = await fetch(`${API_URL}/generate-text`, {
