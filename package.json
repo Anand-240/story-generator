@@ -1,0 +1,62 @@
+{
+  "name": "storyforge-ai",
+  "version": "1.0.0",
+  "description": "AI-powered story generator with automatic scene illustrations",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "start": "npm run dev",
+    "build": "cd frontend && npm run build",
+    "build:all": "npm run build && cd backend && npm run build",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "test:story": "cd backend && node test-story-generation.js",
+    "test:images": "cd backend && node test-5-scene-images.js --full",
+    "test:ai": "cd backend && node test-ai-image-prompts.js --full",
+    "test:full": "cd backend && node test-5-scene-images.js --all",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "clean": "rm -rf node_modules backend/node_modules frontend/node_modules",
+    "setup": "npm run install:all && cp backend/.env.example backend/.env && cp frontend/.env.example frontend/.env",
+    "docs": "echo 'Documentation available in README.md'"
+  },
+  "keywords": [
+    "ai",
+    "story",
+    "generator",
+    "creative",
+    "writing",
+    "gemini",
+    "react",
+    "typescript",
+    "storytelling",
+    "artificial-intelligence",
+    "narrative",
+    "fiction",
+    "image-generation"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/your-username/story-generator#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/story-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/story-generator/issues"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "prettier": "^3.1.0",
+    "eslint": "^8.55.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "private": false
+}
