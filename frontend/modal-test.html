@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-backdrop {
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        .modal-content {
+            animation: zoomIn 0.2s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 min-h-screen">
+    <div class="p-8">
+        <h1 class="text-white text-2xl mb-4">Modal Test</h1>
+        
+        <!-- Test Image -->
+        <div class="aspect-video bg-white/10 rounded-xl border border-white/20 overflow-hidden w-64 cursor-pointer" onclick="openModal()">
+            <img 
+                src="https://image.pollinations.ai/prompt/A%20cute%20robot%20chef%20cooking%20in%20a%20modern%20kitchen?width=400&height=300"
+                alt="Test image"
+                class="w-full h-full object-cover hover:scale-105 transition-transform"
+            />
+        </div>
+        
+        <button onclick="openModal()" class="mt-4 px-4 py-2 bg-purple-600 text-white rounded">Open Modal</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm modal-backdrop hidden" onclick="closeModal(event)">
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="relative max-w-4xl max-h-full w-full h-full flex items-center justify-center modal-content" onclick="event.stopPropagation()">
+                
+                <!-- Top Control Bar -->
+                <div class="absolute top-4 left-4 right-4 z-10 flex items-center justify-between">
+                    <div class="flex items-center space-x-2 bg-black/70 backdrop-blur-sm rounded-full px-4 py-2 text-white">
+                        <span class="text-sm font-medium">Test Scene</span>
+                    </div>
+                    
+                    <div class="flex items-center space-x-2">
+                        <!-- Download Button -->
+                        <button onclick="downloadImage()" class="p-2 bg-black/70 hover:bg-black/90 text-white rounded-full transition-all duration-200">
+                            📥
+                        </button>
+                        
+                        <!-- Close Button -->
+                        <button onclick="closeModal()" class="p-2 bg-black/70 hover:bg-black/90 text-white rounded-full transition-all duration-200">
+                            ✕
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Full Size Image -->
+                <div class="relative w-full h-full flex items-center justify-center p-16">
+                    <img
+                        src="https://image.pollinations.ai/prompt/A%20cute%20robot%20chef%20cooking%20in%20a%20modern%20kitchen?width=800&height=600"
+                        alt="Full size test image"
+                        class="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                    />
+                </div>
+                
+                <!-- Bottom Info Bar -->
+                <div class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm rounded-lg p-4 text-white">
+                    <p class="text-sm opacity-90">Test image for modal functionality</p>
+                    <div class="flex items-center justify-between mt-2 text-xs opacity-60">
+                        <span>Test Scene</span>
+                        <span>Click outside or press ESC to close</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal');
+        
+        function openModal() {
+            console.log('Opening modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(event) {
+            console.log('Closing modal');
+            if (event) event.stopPropagation();
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'unset';
+        }
+        
+        function downloadImage() {
+            console.log('Download clicked');
+            const link = document.createElement('a');
+            link.href = 'https://image.pollinations.ai/prompt/A%20cute%20robot%20chef%20cooking%20in%20a%20modern%20kitchen?width=800&height=600';
+            link.download = 'test-image.png';
+            link.target = '_blank';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        // ESC key support
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+        
+        // Click outside to close
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                console.log('Clicked outside modal');
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

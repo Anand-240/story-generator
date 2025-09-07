@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Connection Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background-color: #d4edda; border: 1px solid #c3e6cb; }
+        .error { background-color: #f8d7da; border: 1px solid #f5c6cb; }
+        .loading { background-color: #d1ecf1; border: 1px solid #bee5eb; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 3px; overflow: auto; }
+    </style>
+</head>
+<body>
+    <h1>Story Generator API Connection Test</h1>
+    
+    <div id="status" class="status loading">Testing API connection...</div>
+    
+    <h2>Test Results</h2>
+    <div id="results"></div>
+
+    <script>
+        async function testAPI() {
+            const statusDiv = document.getElementById('status');
+            const resultsDiv = document.getElementById('results');
+            
+            try {
+                // Test 1: Basic API health check
+                statusDiv.innerHTML = 'Testing basic API health check...';
+                const healthResponse = await fetch('http://localhost:3000/api/stories/');
+                const healthData = await healthResponse.json();
+                
+                resultsDiv.innerHTML += `<h3>✅ Health Check</h3><pre>${JSON.stringify(healthData, null, 2)}</pre>`;
+                
+                // Test 2: Story generation
+                statusDiv.innerHTML = 'Testing 5-scene story generation...';
+                const storyPayload = {
+                    idea: 'A robot learns to make coffee',
+                    settings: {
+                        genre: 'Science Fiction',
+                        tone: 'Heartwarming',
+                        audience: 'General'
+                    }
+                };
+                
+                const storyResponse = await fetch('http://localhost:3000/api/stories/generate-text', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(storyPayload)
+                });
+                
+                if (!storyResponse.ok) {
+                    throw new Error(`Story API error: ${storyResponse.statusText}`);
+                }
+                
+                const storyData = await storyResponse.json();
+                
+                resultsDiv.innerHTML += `<h3>✅ Story Generation</h3>`;
+                resultsDiv.innerHTML += `<p><strong>Scenes generated:</strong> ${storyData.scenes.length}</p>`;
+                resultsDiv.innerHTML += `<p><strong>Story ID:</strong> ${storyData.id}</p>`;
+                resultsDiv.innerHTML += `<p><strong>Genre:</strong> ${storyData.settings.genre}</p>`;
+                
+                // Show first scene preview
+                if (storyData.scenes.length > 0) {
+                    resultsDiv.innerHTML += `<h4>Scene 1 Preview:</h4>`;
+                    resultsDiv.innerHTML += `<pre>${storyData.scenes[0].text.substring(0, 200)}...</pre>`;
+                    resultsDiv.innerHTML += `<p><strong>Image Prompt:</strong> ${storyData.scenes[0].imagePrompt.substring(0, 100)}...</p>`;
+                }
+                
+                // Test 3: Image generation for first scene
+                statusDiv.innerHTML = 'Testing image generation...';
+                const imageResponse = await fetch('http://localhost:3000/api/stories/generate-image', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        imagePrompt: storyData.scenes[0].imagePrompt,
+                        sceneId: storyData.scenes[0].id
+                    })
+                });
+                
+                if (!imageResponse.ok) {
+                    throw new Error(`Image API error: ${imageResponse.statusText}`);
+                }
+                
+                const imageData = await imageResponse.json();
+                
+                resultsDiv.innerHTML += `<h3>✅ Image Generation</h3>`;
+                resultsDiv.innerHTML += `<p><strong>Service:</strong> ${imageData.service}</p>`;
+                resultsDiv.innerHTML += `<p><strong>URL Length:</strong> ${imageData.imageUrl.length} characters</p>`;
+                resultsDiv.innerHTML += `<img src="${imageData.imageUrl}" alt="Generated image" style="max-width: 300px; border: 1px solid #ccc;">`;
+                
+                statusDiv.innerHTML = '🎉 All tests passed! API is working correctly.';
+                statusDiv.className = 'status success';
+                
+            } catch (error) {
+                console.error('API Test Error:', error);
+                statusDiv.innerHTML = `❌ API test failed: ${error.message}`;
+                statusDiv.className = 'status error';
+                resultsDiv.innerHTML += `<h3>❌ Error Details</h3><pre>${error.stack}</pre>`;
+            }
+        }
+        
+        // Start tests when page loads
+        testAPI();
+    </script>
+</body>
+</html>

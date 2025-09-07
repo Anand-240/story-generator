@@ -1,0 +1,251 @@
+[dotenv@17.2.2] injecting env (2) from .env -- tip: ⚙️  override existing env vars with { override: true }
+Server running on port 3000
+Received request body: {
+  idea: 'A young astronaut discovers an ancient alien artifact on Mars',
+  settings: {
+    genre: 'Science Fiction',
+    tone: 'Adventurous',
+    audience: 'Young Adult'
+  }
+}
+Initializing Gemini 2.5 Flash model...
+Sending prompt to Gemini: You are a professional storyteller. Create an engaging, well-structured story divided into exactly 5 scenes based on the following parameters:
+
+**Story Concept:** A young astronaut discovers an ancient alien artifact on Mars
+**Genre:** Science Fiction
+**Tone:** Adventurous
+**Target Audience:** Young Adult
+
+**Requirements:**
+- Write a complete story divided into exactly 5 distinct scenes
+- Each scene should be 200-300 words
+- Include vivid descriptions and compelling characters
+- Maintain consistent Adventurous tone throughout
+- Ensure the story fits the Science Fiction genre
+- Include dialogue where appropriate
+- Create immersive scenes with sensory details
+
+**5-Scene Story Structure:**
+1. **Scene 1 - Opening Hook**: Introduce the main character and initial situation
+2. **Scene 2 - World Building**: Establish the setting and present the central conflict
+3. **Scene 3 - Rising Action**: Develop the conflict with increasing tension
+4. **Scene 4 - Climax**: The peak moment of tension and confrontation
+5. **Scene 5 - Resolution**: Conclusion that resolves the conflict satisfactorily
+
+**Output Format:**
+Please format your response as follows, with each scene clearly separated:
+
+---SCENE 1---
+[Scene 1 content]
+
+---SCENE 2---
+[Scene 2 content]
+
+---SCENE 3---
+[Scene 3 content]
+
+---SCENE 4---
+[Scene 4 content]
+
+---SCENE 5---
+[Scene 5 content]
+
+Please write the complete 5-scene story now:
+Received response from Gemini
+Sending response to frontend
+Received image generation request: {
+  imagePrompt: 'Scene 1 illustration for Science Fiction story: A young astronaut discovers an ancient alien artifact on Mars. Focus on opening scene, character introduction. Style: Adventurous mood, detailed digital artwork, professional book illustration, Science Fiction genre aesthetic, cinematic composition, rich colors, atmospheric lighting',
+  sceneId: '1'
+}
+Generating image with Imagen-4: Scene 1 illustration for Science Fiction story: A young astronaut discovers an ancient alien artifact on Mars. Focus on opening scene, character introduction. Style: Adventurous mood, detailed digital artwork, professional book illustration, Science Fiction genre aesthetic, cinematic composition, rich colors, atmospheric lighting. Digital art, high quality, detailed illustration, professional artwork, vibrant colors, cinematic lighting
+Imagen-4 generation failed: {"error":{"code":400,"message":"Imagen API is only accessible to billed users at this time.","status":"INVALID_ARGUMENT"}}
+ℹ️  Note: Imagen-4 requires billing to be enabled on your Google Cloud account.
+ℹ️  Falling back to alternative image generation methods.
+Using fallback: Pollinations
+Received image generation request: {
+  imagePrompt: 'Scene 2 illustration for Science Fiction story: A young astronaut discovers an ancient alien artifact on Mars. Focus on world building, setting establishment. Style: Adventurous mood, detailed digital artwork, professional book illustration, Science Fiction genre aesthetic, cinematic composition, rich colors, atmospheric lighting',
+  sceneId: '2'
+}
+Generating image with Imagen-4: Scene 2 illustration for Science Fiction story: A young astronaut discovers an ancient alien artifact on Mars. Focus on world building, setting establishment. Style: Adventurous mood, detailed digital artwork, professional book illustration, Science Fiction genre aesthetic, cinematic composition, rich colors, atmospheric lighting. Digital art, high quality, detailed illustration, professional artwork, vibrant colors, cinematic lighting
+Imagen-4 generation failed: {"error":{"code":400,"message":"Imagen API is only accessible to billed users at this time.","status":"INVALID_ARGUMENT"}}
+ℹ️  Note: Imagen-4 requires billing to be enabled on your Google Cloud account.
+ℹ️  Falling back to alternative image generation methods.
+Using fallback: Pollinations
+Received image generation request: {
+  imagePrompt: 'Scene 3 illustration for Science Fiction story: A young astronaut discovers an ancient alien artifact on Mars. Focus on rising action, conflict development. Style: Adventurous mood, detailed digital artwork, professional book illustration, Science Fiction genre aesthetic, cinematic composition, rich colors, atmospheric lighting',
+  sceneId: '3'
+}
+Generating image with Imagen-4: Scene 3 illustration for Science Fiction story: A young astronaut discovers an ancient alien artifact on Mars. Focus on rising action, conflict development. Style: Adventurous mood, detailed digital artwork, professional book illustration, Science Fiction genre aesthetic, cinematic composition, rich colors, atmospheric lighting. Digital art, high quality, detailed illustration, professional artwork, vibrant colors, cinematic lighting
+Imagen-4 generation failed: {"error":{"code":400,"message":"Imagen API is only accessible to billed users at this time.","status":"INVALID_ARGUMENT"}}
+ℹ️  Note: Imagen-4 requires billing to be enabled on your Google Cloud account.
+ℹ️  Falling back to alternative image generation methods.
+Using fallback: Pollinations
+Received image generation request: {
+  imagePrompt: 'Scene 4 illustration for Science Fiction story: A young astronaut discovers an ancient alien artifact on Mars. Focus on climax, peak tension moment. Style: Adventurous mood, detailed digital artwork, professional book illustration, Science Fiction genre aesthetic, cinematic composition, rich colors, atmospheric lighting',
+  sceneId: '4'
+}
+Generating image with Imagen-4: Scene 4 illustration for Science Fiction story: A young astronaut discovers an ancient alien artifact on Mars. Focus on climax, peak tension moment. Style: Adventurous mood, detailed digital artwork, professional book illustration, Science Fiction genre aesthetic, cinematic composition, rich colors, atmospheric lighting. Digital art, high quality, detailed illustration, professional artwork, vibrant colors, cinematic lighting
+Imagen-4 generation failed: {"error":{"code":400,"message":"Imagen API is only accessible to billed users at this time.","status":"INVALID_ARGUMENT"}}
+ℹ️  Note: Imagen-4 requires billing to be enabled on your Google Cloud account.
+ℹ️  Falling back to alternative image generation methods.
+Using fallback: Pollinations
+Received image generation request: {
+  imagePrompt: 'Scene 5 illustration for Science Fiction story: A young astronaut discovers an ancient alien artifact on Mars. Focus on resolution, story conclusion. Style: Adventurous mood, detailed digital artwork, professional book illustration, Science Fiction genre aesthetic, cinematic composition, rich colors, atmospheric lighting',
+  sceneId: '5'
+}
+Generating image with Imagen-4: Scene 5 illustration for Science Fiction story: A young astronaut discovers an ancient alien artifact on Mars. Focus on resolution, story conclusion. Style: Adventurous mood, detailed digital artwork, professional book illustration, Science Fiction genre aesthetic, cinematic composition, rich colors, atmospheric lighting. Digital art, high quality, detailed illustration, professional artwork, vibrant colors, cinematic lighting
+Imagen-4 generation failed: {"error":{"code":400,"message":"Imagen API is only accessible to billed users at this time.","status":"INVALID_ARGUMENT"}}
+ℹ️  Note: Imagen-4 requires billing to be enabled on your Google Cloud account.
+ℹ️  Falling back to alternative image generation methods.
+Using fallback: Pollinations
+Received request body: {
+  idea: 'A robot learns to paint masterpieces',
+  settings: {
+    genre: 'Science Fiction',
+    tone: 'Heartwarming',
+    audience: 'General'
+  }
+}
+Initializing Gemini 2.5 Flash model...
+Sending prompt to Gemini: You are a professional storyteller. Create an engaging, well-structured story divided into exactly 5 scenes based on the following parameters:
+
+**Story Concept:** A robot learns to paint masterpieces
+**Genre:** Science Fiction
+**Tone:** Heartwarming
+**Target Audience:** General
+
+**Requirements:**
+- Write a complete story divided into exactly 5 distinct scenes
+- Each scene should be 200-300 words
+- Include vivid descriptions and compelling characters
+- Maintain consistent Heartwarming tone throughout
+- Ensure the story fits the Science Fiction genre
+- Include dialogue where appropriate
+- Create immersive scenes with sensory details
+
+**5-Scene Story Structure:**
+1. **Scene 1 - Opening Hook**: Introduce the main character and initial situation
+2. **Scene 2 - World Building**: Establish the setting and present the central conflict
+3. **Scene 3 - Rising Action**: Develop the conflict with increasing tension
+4. **Scene 4 - Climax**: The peak moment of tension and confrontation
+5. **Scene 5 - Resolution**: Conclusion that resolves the conflict satisfactorily
+
+**Output Format:**
+Please format your response as follows, with each scene clearly separated:
+
+---SCENE 1---
+[Scene 1 content]
+
+---SCENE 2---
+[Scene 2 content]
+
+---SCENE 3---
+[Scene 3 content]
+
+---SCENE 4---
+[Scene 4 content]
+
+---SCENE 5---
+[Scene 5 content]
+
+Please write the complete 5-scene story now:
+Received response from Gemini
+Sending response to frontend
+Received request body: {
+  idea: 'A wizard opens a magical coffee shop',
+  settings: { genre: 'Fantasy', tone: 'Whimsical', audience: 'General' }
+}
+Initializing Gemini 2.5 Flash model...
+Sending prompt to Gemini: You are a professional storyteller. Create an engaging, well-structured story divided into exactly 5 scenes based on the following parameters:
+
+**Story Concept:** A wizard opens a magical coffee shop
+**Genre:** Fantasy
+**Tone:** Whimsical
+**Target Audience:** General
+
+**Requirements:**
+- Write a complete story divided into exactly 5 distinct scenes
+- Each scene should be 200-300 words
+- Include vivid descriptions and compelling characters
+- Maintain consistent Whimsical tone throughout
+- Ensure the story fits the Fantasy genre
+- Include dialogue where appropriate
+- Create immersive scenes with sensory details
+
+**5-Scene Story Structure:**
+1. **Scene 1 - Opening Hook**: Introduce the main character and initial situation
+2. **Scene 2 - World Building**: Establish the setting and present the central conflict
+3. **Scene 3 - Rising Action**: Develop the conflict with increasing tension
+4. **Scene 4 - Climax**: The peak moment of tension and confrontation
+5. **Scene 5 - Resolution**: Conclusion that resolves the conflict satisfactorily
+
+**Output Format:**
+Please format your response as follows, with each scene clearly separated:
+
+---SCENE 1---
+[Scene 1 content]
+
+---SCENE 2---
+[Scene 2 content]
+
+---SCENE 3---
+[Scene 3 content]
+
+---SCENE 4---
+[Scene 4 content]
+
+---SCENE 5---
+[Scene 5 content]
+
+Please write the complete 5-scene story now:
+Received response from Gemini
+Sending response to frontend
+Received request body: {
+  idea: 'Test story',
+  settings: { genre: 'Fantasy', tone: 'Adventurous', audience: 'General' }
+}
+Initializing Gemini 2.5 Flash model...
+Sending prompt to Gemini: You are a professional storyteller. Create an engaging, well-structured story divided into exactly 5 scenes based on the following parameters:
+
+**Story Concept:** Test story
+**Genre:** Fantasy
+**Tone:** Adventurous
+**Target Audience:** General
+
+**Requirements:**
+- Write a complete story divided into exactly 5 distinct scenes
+- Each scene should be 200-300 words
+- Include vivid descriptions and compelling characters
+- Maintain consistent Adventurous tone throughout
+- Ensure the story fits the Fantasy genre
+- Include dialogue where appropriate
+- Create immersive scenes with sensory details
+
+**5-Scene Story Structure:**
+1. **Scene 1 - Opening Hook**: Introduce the main character and initial situation
+2. **Scene 2 - World Building**: Establish the setting and present the central conflict
+3. **Scene 3 - Rising Action**: Develop the conflict with increasing tension
+4. **Scene 4 - Climax**: The peak moment of tension and confrontation
+5. **Scene 5 - Resolution**: Conclusion that resolves the conflict satisfactorily
+
+**Output Format:**
+Please format your response as follows, with each scene clearly separated:
+
+---SCENE 1---
+[Scene 1 content]
+
+---SCENE 2---
+[Scene 2 content]
+
+---SCENE 3---
+[Scene 3 content]
+
+---SCENE 4---
+[Scene 4 content]
+
+---SCENE 5---
+[Scene 5 content]
+
+Please write the complete 5-scene story now:
+Received response from Gemini
+Sending response to frontend

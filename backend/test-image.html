@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Loading Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .image-container { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+        img { max-width: 400px; height: auto; display: block; margin: 10px 0; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>Image Loading Test</h1>
+    
+    <div class="image-container">
+        <h3>Test 1: Pollinations API</h3>
+        <img id="pollinations-img" 
+             src="https://image.pollinations.ai/prompt/A brave knight saves a village, digital art?width=800&height=600&nologo=true" 
+             alt="Pollinations Test" 
+             onload="showStatus('pollinations-status', 'success', 'Image loaded successfully!')" 
+             onerror="showStatus('pollinations-status', 'error', 'Failed to load image')">
+        <div id="pollinations-status" class="status"></div>
+    </div>
+    
+    <div class="image-container">
+        <h3>Test 2: Lorem Picsum (Fallback)</h3>
+        <img id="picsum-img" 
+             src="https://picsum.photos/800/600" 
+             alt="Picsum Test" 
+             onload="showStatus('picsum-status', 'success', 'Fallback image loaded!')" 
+             onerror="showStatus('picsum-status', 'error', 'Fallback failed')">
+        <div id="picsum-status" class="status"></div>
+    </div>
+    
+    <div class="image-container">
+        <h3>Test 3: Placeholder (Ultimate Fallback)</h3>
+        <img id="placeholder-img" 
+             src="https://via.placeholder.com/800x600/8b5cf6/ffffff?text=Knight%20Story" 
+             alt="Placeholder Test" 
+             onload="showStatus('placeholder-status', 'success', 'Placeholder loaded!')" 
+             onerror="showStatus('placeholder-status', 'error', 'Placeholder failed')">
+        <div id="placeholder-status" class="status"></div>
+    </div>
+    
+    <script>
+        function showStatus(elementId, type, message) {
+            const element = document.getElementById(elementId);
+            element.className = 'status ' + type;
+            element.textContent = message;
+        }
+        
+        // Test API call
+        fetch('/api/stories/generate-image', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ imagePrompt: 'A magical castle', sceneId: 'test' })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('API Test Result:', data);
+            document.body.innerHTML += '<h3>API Test Result:</h3><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+        })
+        .catch(error => {
+            console.error('API Test Error:', error);
+            document.body.innerHTML += '<h3>API Test Error:</h3><p>' + error.message + '</p>';
+        });
+    </script>
+</body>
+</html>
