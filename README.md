@@ -44,17 +44,6 @@ graph LR
 <details>
 <summary>🎬 <strong>Click to see StoryForge AI in action!</strong></summary>
 
-### Sample Generated Story
-
-**Idea:** *"A detective cat solves mysteries in a magical bakery"*
-
-| Scene | Content Preview | AI-Generated Image |
-|-------|----------------|-------------------|
-| 🎭 **Scene 1** | *Inspector Pounce stretched lazily in his sun-drenched office...* | ![Scene 1](https://img.shields.io/badge/🖼️-Generated-success) |
-| 🏰 **Scene 2** | *The enchanted bakery buzzed with worried energy...* | ![Scene 2](https://img.shields.io/badge/🖼️-Generated-success) |
-| ⚡ **Scene 3** | *Following glittering clues through the mystical garden...* | ![Scene 3](https://img.shields.io/badge/🖼️-Generated-success) |
-| 🎯 **Scene 4** | *The confrontation with the mischievous Pixie-Squirrel...* | ![Scene 4](https://img.shields.io/badge/🖼️-Generated-success) |
-| 🎊 **Scene 5** | *Peace restored, everyone enjoying magical treats together...* | ![Scene 5](https://img.shields.io/badge/🖼️-Generated-success) |
 
 ### User Interface
 
