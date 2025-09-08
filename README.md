@@ -533,37 +533,7 @@ Special thanks to the storytelling community and AI researchers making creative 
 
 ---
 
-## 📞 Support & Contact
 
-<div align="center">
-
-### 💬 **Get in Touch**
-
-[![GitHub Issues](https://img.shields.io/github/issues/your-username/story-generator?style=flat&logo=github)](https://github.com/your-username/story-generator/issues)
-[![Email](https://img.shields.io/badge/Email-Contact-blue?style=flat&logo=gmail)](mailto:your-email@example.com)
-[![Discord](https://img.shields.io/badge/Discord-Community-purple?style=flat&logo=discord)](https://discord.gg/your-server)
-
-**Found a bug?** [Create an issue](https://github.com/your-username/story-generator/issues/new)  
-**Have a feature idea?** [Start a discussion](https://github.com/your-username/story-generator/discussions)  
-**Need help?** Check our [documentation](#-documentation) or ask in [Discord](https://discord.gg/your-server)
-
-</div>
-
----
-
-<div align="center">
-
-### ⭐ **Enjoying StoryForge AI?**
-
-**Give us a star!** ⭐ It helps others discover this project.
-
-[![Star History Chart](https://api.star-history.com/svg?repos=your-username/story-generator&type=Date)](https://star-history.com/#your-username/story-generator&Date)
-
-**Made with ❤️ by developers who love great stories**
-
-</div>
-
----
 
 ## 🗺️ Roadmap
 
